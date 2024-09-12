@@ -7,7 +7,10 @@ enum TapArea { hole, overlay, label }
 
 class OnboardingStepRenderInfo {
   /// The `title` for the current step
-  final String titleText;
+  // final String titleText;
+
+  /// The `title widget` for the current step
+  final Widget titleWidget;
 
   /// The resolved active [TextStyle] for this `title`
   final TextStyle titleStyle;
@@ -28,7 +31,7 @@ class OnboardingStepRenderInfo {
   final VoidCallback close;
 
   OnboardingStepRenderInfo({
-    required this.titleText,
+    required this.titleWidget,
     required this.titleStyle,
     required this.bodyText,
     required this.bodyStyle,
@@ -68,7 +71,7 @@ class OnboardingStep {
   OnboardingStep({
     this.key,
     required this.focusNode,
-    required this.titleText,
+    required this.titleWidget,
     this.titleTextColor = defaultTextColor,
     this.titleTextStyle,
     this.bodyText = '',
@@ -142,7 +145,10 @@ class OnboardingStep {
   final Color? titleTextColor;
 
   /// is required
-  final String titleText;
+  // final String titleText;
+
+  /// is required
+  final Widget titleWidget;
 
   /// By default, the value used is `ArrowPosition.autoVertical`
   final ArrowPosition arrowPosition;
@@ -270,7 +276,7 @@ class OnboardingStep {
     FocusNode? focusNode,
     TextAlign? textAlign,
     Color? titleTextColor,
-    String? titleText,
+    Widget? titleWidget,
     ArrowPosition? arrowPosition,
     TextStyle? titleTextStyle,
     String? bodyText,
@@ -298,7 +304,7 @@ class OnboardingStep {
       focusNode: focusNode ?? this.focusNode,
       textAlign: textAlign ?? this.textAlign,
       titleTextColor: titleTextColor ?? this.titleTextColor,
-      titleText: titleText ?? this.titleText,
+      titleWidget: titleWidget ?? this.titleWidget,
       arrowPosition: arrowPosition ?? this.arrowPosition,
       titleTextStyle: titleTextStyle ?? this.titleTextStyle,
       bodyText: bodyText ?? this.bodyText,
@@ -330,7 +336,7 @@ class OnboardingStep {
       focusNode: $focusNode,
       textAlign: $textAlign,
       titleTextColor: $titleTextColor,
-      title: $titleText,
+      titleWidget: $titleWidget,
       arrowPosition: $arrowPosition,
       titleTextStyle: $titleTextStyle,
       bodyText: $bodyText,
@@ -364,7 +370,7 @@ class OnboardingStep {
         other.focusNode == focusNode &&
         other.textAlign == textAlign &&
         other.titleTextColor == titleTextColor &&
-        other.titleText == titleText &&
+        other.titleWidget == titleWidget &&
         other.arrowPosition == arrowPosition &&
         other.titleTextStyle == titleTextStyle &&
         other.bodyText == bodyText &&
@@ -394,7 +400,7 @@ class OnboardingStep {
         focusNode.hashCode ^
         textAlign.hashCode ^
         titleTextColor.hashCode ^
-        titleText.hashCode ^
+        titleWidget.hashCode ^
         arrowPosition.hashCode ^
         titleTextStyle.hashCode ^
         bodyText.hashCode ^
