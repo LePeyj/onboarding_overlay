@@ -89,7 +89,7 @@ class LabelPainter extends CustomPainter {
       0,
       0,
       size.width,
-      size.height,
+      300,
     );
 
     final Paint paintBody = Paint()
