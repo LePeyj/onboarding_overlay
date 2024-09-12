@@ -32,12 +32,7 @@ class LabelPainter extends CustomPainter {
     ),
     required this.hole,
     required this.isTop,
-  })  : assert(
-            (hasArrow && hasLabelBox) ||
-                (!hasArrow && !hasLabelBox) ||
-                !hasArrow && hasLabelBox,
-            'hasArrow $hasArrow cannot be true if hasLabelBox $hasLabelBox is false'),
-        _decoration = labelBoxDecoration.copyWith(
+  })  : _decoration = labelBoxDecoration.copyWith(
           shape: BoxShape.rectangle,
         );
 
