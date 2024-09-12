@@ -596,7 +596,7 @@ class OnboardingStepperState extends State<OnboardingStepper>
               labelKey: labelKey,
               overlayAnimation: overlayAnimation,
               debugBoundaries: widget.debugBoundaries,
-              size: Size(boxWidth, boxHeight),
+              // size: Size(boxWidth, boxHeight),
               isTop: isTop,
               step: step,
               isEmpty: !(widgetRect.width != 0 && widgetRect.height != 0),
