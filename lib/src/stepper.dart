@@ -713,48 +713,8 @@ class AnimatedLabel extends StatelessWidget {
                         child: Padding(
                           padding: step.labelBoxPadding,
                           child: autoSizeTexts
-                              ? AutoSizeText.rich(
-                                  TextSpan(
-                                    text: step.titleWidget,
-                                    style: activeTitleStyle,
-                                    children: <InlineSpan>[
-                                      const TextSpan(text: '\n'),
-                                      TextSpan(
-                                        text: step.bodyText,
-                                        style: activeBodyStyle,
-                                      )
-                                    ],
-                                  ),
-                                  textDirection: Directionality.of(context),
-                                  textAlign: step.textAlign,
-                                  minFontSize: 12,
-                                )
-                              : Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  mainAxisAlignment: isTop
-                                      ? MainAxisAlignment.end
-                                      : MainAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      step.titleWidget,
-                                      style: activeTitleStyle,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: step.textAlign,
-                                      textDirection: Directionality.of(context),
-                                    ),
-                                    Text(
-                                      step.bodyText,
-                                      style: activeBodyStyle,
-                                      maxLines: 5,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: step.textAlign,
-                                      textDirection: Directionality.of(context),
-                                    )
-                                  ],
-                                ),
+                              ? step.titleWidget
+                              : step.titleWidget,
                         ),
                       ),
               ),
