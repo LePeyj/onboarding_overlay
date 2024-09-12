@@ -88,7 +88,7 @@ class LabelPainter extends CustomPainter {
     paragraphRect = Rect.fromLTWH(
       0,
       0,
-      100,
+      size.width,
       size.height,
     );
 
