@@ -698,7 +698,7 @@ class AnimatedLabel extends StatelessWidget {
                         child: step.stepBuilder?.call(
                           context,
                           OnboardingStepRenderInfo(
-                            titleText: step.titleText,
+                            titleWidget: step.titleWidget,
                             titleStyle: activeTitleStyle,
                             bodyText: step.bodyText,
                             bodyStyle: activeBodyStyle,
@@ -715,7 +715,7 @@ class AnimatedLabel extends StatelessWidget {
                           child: autoSizeTexts
                               ? AutoSizeText.rich(
                                   TextSpan(
-                                    text: step.titleText,
+                                    text: step.titleWidget,
                                     style: activeTitleStyle,
                                     children: <InlineSpan>[
                                       const TextSpan(text: '\n'),
@@ -738,7 +738,7 @@ class AnimatedLabel extends StatelessWidget {
                                       : MainAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      step.titleText,
+                                      step.titleWidget,
                                       style: activeTitleStyle,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
