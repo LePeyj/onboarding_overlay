@@ -88,8 +88,8 @@ class LabelPainter extends CustomPainter {
     paragraphRect = Rect.fromLTWH(
       0,
       0,
-      size.width,
-      300,
+      100,
+      size.height,
     );
 
     final Paint paintBody = Paint()
