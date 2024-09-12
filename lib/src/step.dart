@@ -123,13 +123,13 @@ class OnboardingStep {
           return true;
         }()),
         assert(() {
-          if (hasArrow && !hasLabelBox) {
-            final List<DiagnosticsNode> information = <DiagnosticsNode>[
-              ErrorSummary('hasArrow cannot be true if hasLabelBox is false'),
-            ];
+          // if (hasArrow && !hasLabelBox) {
+          //   final List<DiagnosticsNode> information = <DiagnosticsNode>[
+          //     ErrorSummary('hasArrow cannot be true if hasLabelBox is false'),
+          //   ];
 
-            throw FlutterError.fromParts(information);
-          }
+          //   throw FlutterError.fromParts(information);
+          // }
           return true;
         }());
 
